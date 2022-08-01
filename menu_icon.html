@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu_icon</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+
+    <style>
+        .menu {width: 40px; height: 40px; display: flex; flex-direction: column; justify-content: space-between; cursor: pointer; position: relative;}
+        .menu .line {width: 100%; height: 5px; background-color: #000; transition: all 0.3s ease; transform-origin: right;}
+        .menu.animated {margin-top: 40px;}
+        .menu.animated.active .line:nth-of-type(1) {transform: rotate(-45deg) translate(-5px,-0.5px);}
+        .menu.animated.active .line:nth-of-type(2) {opacity: 0;}
+        .menu.animated.active .line:nth-of-type(3) {transform: rotate(45deg) translate(-5px,-0.5px);}
+    </style>
+
+</head>
+<body>
+    <div class="menu">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <div class="menu animated">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        window.addEventListener("DOMContentLoaded",function(){
+            let menu_animation = document.getElementsByClassName("menu animated")[0];
+
+            menu_animation.addEventListener("click",function(){
+                this.classList.toggle("active");
+                
+            });
+
+        });
+
+        // jQuery
+        // $(function(){
+        //     let $menu_animation = $(".menu.animated");
+        //     $menu_animation.click(function(){
+        //         $(this).toggleClass("active");
+        //     });
+
+        // });
+
+
+
+
+
+    </script>
+</body>
+</html>
