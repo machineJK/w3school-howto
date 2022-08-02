@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        h1 {color: #000; font-size: 24px; font-weight: 600;}
+        .tabs {display: flex; border: 1px solid #ddd; background-color: #f9f9f9;}
+        .tabs a {padding: 15px 10px; display: flex; justify-content: center; align-items: center;}
+        .tabs a:hover, .tabs a.active {background-color: #ddd;}
+        .txt_box {display: none; padding: 10px; border: 1px solid #ddd; border-top: unset;}
+        .txt_box.active {display: block;}
+    </style>
+
+</head>
+<body>
+    <ul class="tabs">
+        <li><a href="javascript:;" class="active" data-index="1">London</a></li>
+        <li><a href="javascript:;" data-index="2">Paris</a></li>
+        <li><a href="javascript:;" data-index="3">Tokyo</a></li>
+    </ul>
+
+    <div class="txt_box active" data-index="1">
+        <h1>London</h1>
+        <p>London is the capital city of England.</p>
+    </div>
+
+    <div class="txt_box" data-index="2">
+        <h1>Paris</h1>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div class="txt_box" data-index="3">
+        <h1>Tokyo</h1>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        //// JavaScript ////
+        window.addEventListener("DOMContentLoaded",function(){
+            let tabs = document.querySelectorAll(".tabs a");
+            let txt_boxes = document.getElementsByClassName("txt_box");
+
+            tabs.forEach(function(tab){
+                tab.addEventListener("click",function(){
+
+                    for(let i = 0; i < tabs.length; i++){
+                        tabs[i].classList.remove("active");
+                        txt_boxes[i].classList.remove("active");
+                    }
+                    tab.classList.add("active");
+
+                    let txt_box = document.querySelector('.txt_box[data-index="' + tab.dataset.index + '"]');
+                    txt_box.classList.add("active");
+
+                });
+            });
+        });
+
+        //// jQuery ////
+        // $(function(){
+        //     let $tabs = $(".tabs a");
+        //     let $txt_boxes = $(".txt_box");
+
+        //     $tabs.click(function(){
+        //         $tabs.removeClass("active");
+        //         $txt_boxes.removeClass("active");
+
+        //         $(this).addClass("active");
+        //         $('.txt_box[data-index="' + $(this).data("index") + '"]').addClass("active");
+
+        //     });
+        // });
+
+
+    </script>
+</body>
+</html>
