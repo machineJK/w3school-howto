@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>accordion</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .list {width: 400px;}
+        .list li {}
+        .list a {width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px; background-color: #eee;}
+        .list a:hover {background-color: #ccc;}
+        .list a.active {background-color: #ccc;}
+        .list a.active .minus {display: block;}
+        .list a.active .plus {display: none;}
+        .list .plus {}
+        .list .minus {display: none;}
+        .list .txt_box {padding: 0 20px; height: 0; overflow: hidden; transition: height 0.3s ease;}
+        .list .txt_box p {margin: 20px 0;}
+    </style>
+
+</head>
+<body>
+    <ul class="list">
+        <li>
+            <a href="javascript:;">Section 1 <i class="plus xi-plus"></i><i class="minus xi-minus"></i></a>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </li>
+        <li>
+            <a href="javascript:;">Section 2 <i class="plus xi-plus"></i><i class="minus xi-minus"></i></a>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </li>
+        <li>
+            <a href="javascript:;">Section 3 <i class="plus xi-plus"></i><i class="minus xi-minus"></i></a>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        window.addEventListener("DOMContentLoaded",function(){
+            let el_a = document.querySelectorAll(".list a");
+            
+            el_a.forEach(function(a){
+                a.addEventListener("click",function(){
+                    this.classList.toggle("active");
+                    
+                    let el_txt_box = a.nextElementSibling;
+                    
+                    if(this.classList.contains("active")){
+                        el_txt_box.style.height = el_txt_box.scrollHeight + "px";
+                    }else{
+                        // el_txt_box.style.height = null;
+                        el_txt_box.style.height = "0";
+                    }
+                });
+            });
+
+
+        });
+
+    </script>
+</body>
+</html>
