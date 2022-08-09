@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .tab_box {display: flex; background-color: #333;}
+        .tab_box li {}
+        .tab_box li:first-of-type {position: relative;}
+        .tab_box a {display: inline-block; padding: 15px 20px; color: #fff;}
+        .tab_box a:hover {background-color: #aaa;}
+        .tab_box a.active {background-color: green;}
+        .mob_menu {display: none; padding: 15px 20px; height: 100%; border: none; background-color: transparent; flex-direction: column; justify-content: space-between; align-items: center; position: absolute; top: 50%; right: 0; transform: translateY(-50%);}
+        .mob_menu .line {width: 20px; height: 2px; background-color: #fff;}
+        .mob_menu:hover {background-color: #aaa;}
+
+        @media screen and (max-width:768px) {
+            .tab_box {flex-wrap: wrap;}
+            .tab_box li {width: 100%;}
+            .tab_box li:not(:first-of-type) {display: none;}
+            .tab_box li.responsive {display: block;}
+            .tab_box a {display: block;}
+            .mob_menu {display: flex;}
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li>
+            <a href="javascript:;" class="active">Home</a>
+            <button type="button" class="mob_menu">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </button>
+        </li>
+        <li><a href="javascript:;">News</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+        <li><a href="javascript:;">About</a></li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        window.addEventListener("DOMContentLoaded",function(){
+            let el_not_home_li = document.querySelectorAll(".tab_box li:not(.first-of-type)");
+            let el_mob_menu = document.getElementsByClassName("mob_menu")[0];
+
+            el_mob_menu.addEventListener("click",function(){
+                el_not_home_li.forEach(function(li){
+                    li.classList.toggle("responsive");
+                });
+
+            });
+
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
