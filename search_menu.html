@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {display: flex;}
+        .wrap h2 {font-size: 30px; font-weight: 500;}
+        .wrap .lb {width: 30%; background-color: #bbb; padding: 20px 0;}
+        .wrap .lb h2 {padding: 10px 20px;}
+        .wrap .lb input {width: 100%;}
+        .wrap .lb ul li.inactive {display: none;}
+        .wrap .lb ul a {padding: 10px 20px; display: flex; align-items: center; text-align: center;}
+        .wrap .lb ul a:hover {background-color: #eee;}
+        .wrap .rb {width: 70%; background-color: #ddd; padding: 30px 20px;}
+        .wrap .rb h2 {margin-bottom: 20px;}
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="lb">
+            <h2>Menu</h2>
+            <input type="text" placeholder="Search..">
+            <ul>
+                <li><a href="javascript:;">HTML</a></li>
+                <li><a href="javascript:;">CSS</a></li>
+                <li><a href="javascript:;">JavaScript</a></li>
+                <li><a href="javascript:;">PHP</a></li>
+                <li><a href="javascript:;">Python</a></li>
+                <li><a href="javascript:;">jQuery</a></li>
+                <li><a href="javascript:;">SQL</a></li>
+                <li><a href="javascript:;">Bootstrap</a></li>
+                <li><a href="javascript:;">Node.js</a></li>
+            </ul>
+        </div>
+        <div class="rb">
+            <h2>Page Content</h2>
+            <p>
+                Start to type for a specific category/link inside the search bar to "filter" the search options.
+                <br><br> Some text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..
+                <br><br> Some other text..Some text..Some text..Some text..Some text..Some text..Some text..Some text..
+                <br><br> Some text..
+            </p>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        window.addEventListener("DOMContentLoaded",function(){
+            let input_text = document.querySelector(".wrap .lb input");
+            let tabs = document.querySelectorAll(".wrap .lb ul li");
+
+            input_text.addEventListener("keyup",function(){
+                let text = this.value.toLowerCase();
+
+                tabs.forEach(function(tab){
+                    if(tab.textContent.toLowerCase().indexOf(text) == -1){
+                        tab.classList.add("inactive");
+                    }else{
+                        tab.classList.remove("inactive");
+                    }
+                });
+                
+            });
+
+            console.log(document.querySelector(".wrap .rb").querySelector("h2"));
+        });
+
+        // jQuery
+        // $(function(){
+        //     let $input_text = $(".wrap .lb input");
+        //     let $tabs = $(".wrap .lb ul li");
+
+        //     $input_text.keyup(function(){
+        //         let text = $(this).val().toLowerCase();
+                
+        //         $tabs.each(function(){
+        //             if($(this).text().toLowerCase().indexOf(text) == -1){
+        //                 $(this).addClass("inactive");
+        //             }else{
+        //                 $(this).removeClass("inactive");
+        //             }
+        //         });
+
+        //     });
+        // });
+
+    </script>
+</body>
+</html>
