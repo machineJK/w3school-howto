@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {display: flex; height: 100vh;}
+        .content {width: 100%; padding: 20px; transition: background-color 0.7s ease;}
+        .content button {background-color: transparent;}
+        .tab_box {width: 0; flex-shrink: 0; background-color: #111; position: relative; overflow: hidden; transition: width 0.7s ease;}
+        .tab_box ul {width: 80%; margin: 100px auto 0;}
+        .tab_box ul li:not(:last-of-type) {margin-bottom: 20px;}
+        .tab_box ul a {color: #818181; font-size: 30px;}
+        .tab_box ul a:hover {color: #fff;}
+        .btn_cls {position: absolute; top: 10px; right: 10%; background-color: transparent; border: none; padding: 0;}
+        .btn_cls i {color: #818181; transition: color 0.3s ease; font-size: 24px;}
+        .btn_cls:hover i {color: #fff;}
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <div class="tab_box">
+            <button class="btn_cls" type="button"><i class="xi-close"></i></button>
+            <ul>   
+                <li><a href="javascript:;">About</a></li>
+                <li><a href="javascript:;">Services</a></li>
+                <li><a href="javascript:;">Clients</a></li>
+                <li><a href="javascript:;">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <button class="btn_type01" type="button">Open Off-Canvas Menu</button>
+            <button class="btn_type02" type="button">Off-Canvas Menu w/opacity</button>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        // window.addEventListener("DOMContentLoaded",function(){
+        //     let tab_box = document.querySelector(".tab_box");
+        //     let btn_cls = document.querySelector(".btn_cls");
+        //     let content = document.querySelector(".content");
+        //     let btn_type01 = document.querySelector(".btn_type01");
+        //     let btn_type02 = document.querySelector(".btn_type02");
+
+        //     btn_type01.addEventListener("click",function(){
+        //         tab_box.style.width = "250px";
+        //     });
+            
+        //     btn_cls.addEventListener("click",function(){
+        //         tab_box.style.width = "0";
+        //         content.style.backgroundColor = "#fff";
+        //     });
+
+        //     btn_type02.addEventListener("click",function(){
+        //         tab_box.style.width = "250px";
+        //         content.style.backgroundColor = "rgba(0,0,0,0.8)";
+        //     });
+        // });
+
+        // jQuery
+        $(function(){
+            let $tab_box = $(".tab_box");
+            let $btn_cls = $(".btn_cls");
+            let $content = $(".content");
+            let $btn_type01 = $(".btn_type01");
+            let $btn_type02 = $(".btn_type02");
+
+            $btn_type01.click(function(){
+                $tab_box.css("width","250px");
+            });
+            
+            $btn_cls.click(function(){
+                $tab_box.css("width","0");
+                $content.css("background-color","#fff");
+            });
+
+            $btn_type02.click(function(){
+                $tab_box.css("width","250px");
+                $content.css("background-color","rgba(0,0,0,0.8)");
+            });
+        });
+
+    </script>
+</body>
+</html>
