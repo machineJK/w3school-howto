@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .tab_box {}
+        .tab_box li {}
+        .tab_box a {width: 200px; padding: 15px; display: flex; align-items: center; justify-content: flex-start; background-color: #f1f1f1;}
+        .tab_box a.active {background-color: #059862; color: #fff;}
+        .tab_box a:not(.active):hover {background-color: #ccc;}
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li><a href="javascript:;" class="active">Home</a></li>
+        <li><a href="javascript:;">Link 1</a></li>
+        <li><a href="javascript:;">Link 2</a></li>
+        <li><a href="javascript:;">Link 3</a></li>
+        <li><a href="javascript:;">Link 4</a></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        // window.addEventListener("DOMContentLoaded",function(){
+        //     let tab_box = document.querySelector(".tab_box");
+        //     let tabs = document.querySelectorAll(".tab_box a");
+
+        //     tab_box.addEventListener("click",function(e){
+        //         if(e.target.tagName.toLowerCase() == "a"){
+        //             if(!e.target.classList.contains("active")){
+        //                 tabs.forEach(function(tab){
+        //                     tab.classList.remove("active");
+        //                 });
+
+        //                 e.target.classList.add("active");
+        //             }
+        //         }
+        //     });
+        // });
+
+        // jQuery
+        $(function(){
+            let $tabs = $(".tab_box a");
+
+            $tabs.click(function(){
+                $tabs.removeClass("active");
+                $(this).addClass("active");
+            });
+        });
+
+
+
+    </script>
+</body>
+</html>
