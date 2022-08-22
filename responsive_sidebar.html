@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {}
+
+        .tab_box {position: fixed; top: 0; left: 0; height: 100%; background-color: #f1f1f1;}
+        .tab_box a {width: 200px; padding: 20px;}
+        .tab_box a.active {color: #fff; background-color: #04AA6D;}
+        .tab_box a:hover {color: #fff; background-color: #555;}
+
+        .txt_box {height: 1200px; padding: 20px 20px 20px 220px;}
+        .txt_box h1 {font-size: 30px; font-weight: 600; margin-bottom: 15px;}
+        .txt_box h2 {font-size: 20px; font-weight: 600;}
+        .txt_box p {margin-bottom: 15px;}
+
+        @media screen and (max-width:700px) {
+            .tab_box {display: flex; position: static; height: auto;}
+            .tab_box a {width: auto; padding: 20px;}
+
+            .txt_box {padding-left: 20px;}
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <ul class="tab_box">
+            <li><a href="javascript:;" class="active">Home</a></li>
+            <li><a href="javascript:;">News</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+            <li><a href="javascript:;">About</a></li>
+        </ul>
+
+        <div class="txt_box">
+            <h1>Responsive Sidebar Example</h1>
+            <p>This example use media queries to transform the sidebar to a top navigation bar when the screen size is 700px or less.</p>
+            <p>We have also added a media query for screens that are 400px or less, which will vertically stack and center the navigation links.</p>
+            <h2>Resize the browser window to see the effect.</h2>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
