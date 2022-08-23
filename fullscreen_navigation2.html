@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .menu_box {width: 100%; height: 100%; position: absolute;}
+        .menu_box.type01 {top: 0; left: -100%; transition: left 0.7s ease;}
+        .menu_box.type02 {top: -100%; left: 0; transition: top 0.7s ease;}
+        .menu_box.type03 {top: 0; left: 0; display: none;}
+
+        .bg_black {width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: #000; opacity: 0.8;}
+        .btn_cls {position: absolute; top: 30px; right: 30px; background-color: transparent; border: none; z-index: 2;} 
+        .btn_cls i {color: #818181; transition: color 0.3s ease; font-size: 30px;}
+        .btn_cls:hover i {color: #fff;}
+        .tab_box {text-align: center; font-size: 30px; padding-top: 150px; position: relative; z-index: 1;}
+        .tab_box li:not(:last-of-type) {margin-bottom: 20px;}
+        .tab_box a {color: #818181;}
+        .tab_box a:hover {color: #fff;}
+
+    </style>
+
+</head>
+<body>
+    <div class="menu_box type01">
+        <div class="bg_black"></div>
+        <button class="btn_cls" type="button"><i class="xi-close"></i></button>
+        <ul class="tab_box">
+            <li><a href="javascript:;">About</a></li>
+            <li><a href="javascript:;">Services</a></li>
+            <li><a href="javascript:;">Clients</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="menu_box type02">
+        <div class="bg_black"></div>
+        <button class="btn_cls" type="button"><i class="xi-close"></i></button>
+        <ul class="tab_box">
+            <li><a href="javascript:;">About</a></li>
+            <li><a href="javascript:;">Services</a></li>
+            <li><a href="javascript:;">Clients</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="menu_box type03">
+        <div class="bg_black"></div>
+        <button class="btn_cls" type="button"><i class="xi-close"></i></button>
+        <ul class="tab_box">
+            <li><a href="javascript:;">About</a></li>
+            <li><a href="javascript:;">Services</a></li>
+            <li><a href="javascript:;">Clients</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+        </ul>
+    </div>
+
+    <button class="btn_slide_right" type="button">Slide Right</button>
+    <button class="btn_slide_down" type="button">Slide Down</button>
+    <button class="btn_show" type="button">Show (No animation)</button>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        // window.addEventListener("DOMContentLoaded",function(){
+        //     let type01 = document.querySelector(".menu_box.type01");
+        //     let type02 = document.querySelector(".menu_box.type02");
+        //     let type03 = document.querySelector(".menu_box.type03");
+        //     let btn_cls_01 = document.querySelector(".menu_box.type01 .btn_cls");
+        //     let btn_cls_02 = document.querySelector(".menu_box.type02 .btn_cls");
+        //     let btn_cls_03 = document.querySelector(".menu_box.type03 .btn_cls");
+        //     let btn_slide_right = document.querySelector(".btn_slide_right");
+        //     let btn_slide_down = document.querySelector(".btn_slide_down");
+        //     let btn_show = document.querySelector(".btn_show");
+
+        //     btn_slide_right.addEventListener("click",function(){
+        //         type01.style.left = "0";
+        //     });
+
+        //     btn_cls_01.addEventListener("click",function(){
+        //         type01.style.left = "-100%";
+        //     });
+
+        //     btn_slide_down.addEventListener("click",function(){
+        //         type02.style.top = "0";
+        //     });
+
+        //     btn_cls_02.addEventListener("click",function(){
+        //         type02.style.top = "-100%";
+        //     });
+
+        //     btn_show.addEventListener("click",function(){
+        //         type03.style.display = "block";
+        //     });
+
+        //     btn_cls_03.addEventListener("click",function(){
+        //         type03.style.display = "none";
+        //     });
+        // });
+
+        // jQuery
+        $(function(){
+            let $type01 = $(".menu_box.type01");
+            let $type02 = $(".menu_box.type02");
+            let $type03 = $(".menu_box.type03");
+            let $btn_cls_01 = $(".menu_box.type01 .btn_cls");
+            let $btn_cls_02 = $(".menu_box.type02 .btn_cls"); 
+            let $btn_cls_03 = $(".menu_box.type03 .btn_cls"); 
+            let $btn_slide_right = $(".btn_slide_right"); 
+            let $btn_slide_down = $(".btn_slide_down");
+            let $btn_show = $(".btn_show");
+
+            $btn_slide_right.click(function(){
+                $type01.css("left","0");
+            });
+
+            $btn_cls_01.click(function(){
+                $type01.css("left","-100%");
+            });
+
+            $btn_slide_down.click(function(){
+                $type02.css("top","0");
+            });
+
+            $btn_cls_02.click(function(){
+                $type02.css("top","-100%");
+            });
+
+            $btn_show.click(function(){
+                $type03.show();
+            });
+
+            $btn_cls_03.click(function(){
+                $type03.hide();
+            });
+        });
+
+
+    </script>
+</body>
+</html>
