@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .tab_box {background-color: #f1f1f1; display: flex;}
+        .tab_box a {display: flex; justify-content: center; align-items: center; padding: 0 15px; height: 50px; position: relative;}
+        .tab_box a::before {content: ""; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background-color: red; transition: width 0.3s ease;}
+        .tab_box a:hover::before {width: 100%;}
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">News</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
