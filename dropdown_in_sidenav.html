@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {padding: 40px 0 0 220px;}
+        h1 {font-weight: 600; font-size: 40px;}
+        .tab_box {position: fixed; left: 0; top: 0; width: 200px; height: 100vh; background-color: #333;}
+        .tab_box > li {margin-top: 10px;}
+        .tab_box > li > a {color: #818181; padding: 10px 20px;}
+        .tab_box > li > a:hover {color: #f1f1f1;}
+        .tab_box .dropdown > a {display: flex; justify-content: space-between; align-items: center;}
+        .tab_box .dropdown > a:hover i {color: #f1f1f1;}
+        .tab_box .dropdown > a.active {background-color: green; color: #fff;}
+        .tab_box .dropdown > a.active i {color: #fff;}
+        .tab_box .dropdown > a.active + ul {display: block;}
+        .tab_box .dropdown > a i {color: #818181; transition: all 0.3s ease;}
+        .tab_box .dropdown ul {display: none; background-color: #262626;}
+        .tab_box .dropdown ul a {width: 100%; justify-content: flex-start; padding: 10px 30px; color: #818181;}
+        .tab_box .dropdown ul a:hover {color: #f1f1f1;}
+        
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li><a href="javascript:;">About</a></li>
+        <li><a href="javascript:;">Services</a></li>
+        <li><a href="javascript:;">Clients</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+        <li class="dropdown">
+            <a href="javascript:;">Dropdown <i class="xi-caret-down"></i></a>
+            <ul>
+                <li><a href="javascript:;">Link 1</a></li>
+                <li><a href="javascript:;">Link 2</a></li>
+                <li><a href="javascript:;">Link 3</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:;">Search</a></li>
+    </ul>
+    <div class="wrap">
+        <h1>Sidebar Dropdown</h1>
+        <p>Click on the dropdown button to open the dropdown menu inside the side navigation.</p>
+        <p>This sidebar is of full height (100%) and always shown.</p>
+        <p>Some random text..</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        window.addEventListener("DOMContentLoaded",function(){
+            let btn_dropdown = document.querySelector(".dropdown > a");
+
+            btn_dropdown.addEventListener("click",function(){
+                this.classList.toggle("active");
+            });
+        });
+
+        // jQuery
+        // $(function(){
+        //     let $btn_dropdown = $(".dropdown > a");
+        //     $btn_dropdown.click(function(){
+        //         $(this).toggleClass("active");
+        //     });
+        // });
+
+
+    </script>
+</body>
+</html>
