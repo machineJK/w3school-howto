@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .tab_box {width: 50%; display: flex; justify-content: space-between; margin: 0 auto;}
+        .tab_box > li:hover .link_box {display: block;}
+        .tab_box > li {position: relative;}
+        .tab_box button {color: #fff; background-color: #04AA6D;}
+        .tab_box button:hover {background-color: #3e8e41;}
+        .link_box {display: none; position: absolute; background-color: #f9f9f9; box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);}
+        .link_box a {width: 200px; height: 40px; padding: 0 15px; justify-content: flex-start; text-align: left;}
+        .link_box a:hover {background-color: #f1f1f1;}
+
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li>
+            <button type="button">Left</button>
+            <ul class="link_box">
+                <li><a href="javascript:;">Link 1</a></li>
+                <li><a href="javascript:;">Link 2</a></li>
+                <li><a href="javascript:;">Link 3</a></li>
+            </ul>
+        </li>
+        <li>
+            <button type="button">Right</button>
+            <ul class="link_box">
+                <li><a href="javascript:;">Link 1</a></li>
+                <li><a href="javascript:;">Link 2</a></li>
+                <li><a href="javascript:;">Link 3</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
