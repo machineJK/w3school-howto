@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .tab_box {display: flex; background-color: #333; position: relative}
+        .tab_box .home {background-color: #04AA6D;}
+        .tab_box a {height: 50px; padding: 0 15px;}
+        .tab_box > li:not(.home) > a:hover {background-color: #555;}
+        .tab_box > li > a {color: #fff;}
+        .tab_box > li > a i {color: #fff; transition: all 0.3s ease;}
+        .li_dropdown:hover .dropdown_box {display: block;}
+        .li_dropdown:hover > a {background-color: #555;}
+        .dropdown_box {display: none; position: absolute; background-color: #f9f9f9; box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);}
+        .dropdown_box a {width: 170px; justify-content: flex-start;}
+        .dropdown_box a:hover {background-color: #ddd;}
+        .btn_mob_menu {display: none; position: absolute; top: 0; right: 0; width: 50px; height: 50px;}
+        .btn_mob_menu a {flex-direction: column; width: 100%; height: 100%;}
+        .btn_mob_menu span {width: 100%; height: 1px; background-color: #fff;}
+        .btn_mob_menu span:not(:last-of-type) {margin-bottom: 8px;}
+
+        @media screen and (max-width: 768px) {
+            .tab_box {flex-wrap: wrap;}
+            .tab_box > li {display: none; width: 100%;}
+            .tab_box > li.home {width: auto;}
+            .tab_box > li > a {width: 100%; justify-content: flex-start;}
+            .dropdown_box {position: static;}
+            .dropdown_box a {width: 100%;}
+            .tab_box .btn_mob_menu {display: block; width: 50px;}
+            .tab_box .home {display: block;}
+            .tab_box.active > li {display: block;}
+            .tab_box.active > li.home {width: 100%;}
+            .btn_mob_menu a {justify-content: center !important;}
+            
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li class="home"><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">News</a></li>
+        <li><a href="javascript:;">Contact</a></li>
+        <li class="li_dropdown">
+            <a href="javascript:;">Dropdown <i class="xi-caret-down-min"></i></a>
+            <ul class="dropdown_box">
+                <li><a href="javascript:;">Link 1</a></li>
+                <li><a href="javascript:;">Link 2</a></li>
+                <li><a href="javascript:;">Link 3</a></li>
+            </ul>
+        </li>
+        <li><a href="javascript:;">About</a></li>
+        <li class="btn_mob_menu">
+            <a href="javascript:;">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </li>
+    </ul>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        // window.addEventListener("DOMContentLoaded",function(){
+        //     let btn_mob_menu = document.querySelector(".btn_mob_menu a");
+        //     let tab_box = document.querySelector(".tab_box");
+
+        //     btn_mob_menu.addEventListener("click",function(){
+        //         tab_box.classList.toggle("active");
+        //     });
+
+        // });
+
+        // jQuery
+        $(function(){
+            let $btn_mob_menu = $(".btn_mob_menu a");
+            let $tab_box = $(".tab_box");
+
+            $btn_mob_menu.click(function(){
+                $tab_box.toggleClass("active");
+            });
+
+        });
+
+
+
+    </script>
+</body>
+</html>

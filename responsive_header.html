@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {display: flex; align-items: center; justify-content: space-between; background-color: #f1f1f1; padding: 25px 12px;}
+        h1 {font-size: 20px; font-weight: 600;}
+        .menu_box {display: flex;}
+        .menu_box a {padding: 12px; border-radius: 4px;}
+        .menu_box a.active {background-color: dodgerblue; color: #fff;}
+        .menu_box a:not(.active):hover {background-color: #ddd;}
+
+        @media screen and (max-width:768px) {
+            h1 {margin-bottom: 20px;}
+            .wrap {flex-wrap: wrap;}
+            .menu_box {width: 100%; flex-wrap: wrap;}
+            .menu_box li {width: 100%;}
+            .menu_box li a {width: 100%; justify-content: flex-start;}
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <h1>CompanyLogo</h1>
+        <ul class="menu_box">
+            <li><a href="javascript:;" class="active">Home</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+            <li><a href="javascript:;">About</a></li>
+        </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
