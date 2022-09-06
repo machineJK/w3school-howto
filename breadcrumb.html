@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .menu_box {display: flex; padding: 15px; background-color: #eee;}
+        .menu_box li:not(:last-of-type)::after {content: '/\00a0'; margin: 0 15px;}
+        .menu_box a {color: #0275d8;}
+        .menu_box a.active {cursor: auto; color: #333;}
+        .menu_box a:not(.active):hover {color: #01447e; text-decoration: underline;}
+    </style>
+
+</head>
+<body>
+    <ul class="menu_box">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">Pictures</a></li>
+        <li><a href="javascript:;">Summer 15</a></li>
+        <li><a href="javascript:;" class="active">Italy</a></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
