@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+    <ul>
+        <li>
+            Subjects:
+            <select name="" id="" class="sel_subjects">
+                <option value="">Select subject</option>
+            </select>
+        </li>
+        <li>
+            Topics:
+            <select name="" id="" class="sel_topics">
+                <option value="">Please select subject first</option>
+            </select>
+        </li>
+        <li>
+            Chapters:
+            <select name="" id="" class="sel_chapters">
+                <option value="">Please select topic first</option>
+            </select>
+        </li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // JavaScript
+        let subjectObject = {
+            "Front-end": {
+                "HTML": ["Links", "Images", "Tables", "Lists"],
+                "CSS": ["Borders", "Margins", "Backgrounds", "Float"],
+                "JavaScript": ["Variables", "Operators", "Functions", "Conditions"]    
+            },
+            "Back-end": {
+                "PHP": ["Variables", "Strings", "Arrays"],
+                "SQL": ["SELECT", "UPDATE", "DELETE"]
+            }
+        }
+
+        // function obj_property_cnt(obj){
+        //     return Object.keys(obj).length;
+        // }
+
+        window.addEventListener("DOMContentLoaded", () => {
+            let sel_subjects = document.querySelector(".sel_subjects");
+            let sel_topics = document.querySelector(".sel_topics");
+            let sel_chapters = document.querySelector(".sel_chapters");
+
+            if(sel_subjects.options.length == 1){
+                for(let key in subjectObject){
+                    sel_subjects.options[sel_subjects.options.length] = new Option(key,key);
+                }
+                console.dir(sel_subjects);
+            }
+
+            sel_subjects.addEventListener("change",function(){
+                sel_topics.options.length = 1;
+                sel_chapters.options.length = 1;
+
+                for(let key in subjectObject[this.options[this.options.selectedIndex].text]){
+                    sel_topics.options[sel_topics.options.length] = new Option(key,key);
+                }
+            });
+            
+            sel_topics.addEventListener("change",function(){
+                sel_chapters.options.length = 1;
+                let arr = subjectObject[sel_subjects.options[sel_subjects.options.selectedIndex].text][this.options[this.options.selectedIndex].text];
+                arr.forEach(i => {
+                    sel_chapters.options[sel_chapters.options.length] = new Option(i,i);
+                });
+                
+                // [sel_topics.options[sel_topics.options.selectedIndex]]
+                
+
+
+            });
+
+
+
+        });
+
+
+
+
+
+    </script>
+</body>
+</html>
