@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .wrap {display: flex;}
+        .tab_box {background-color: #111; width: 0; position: relative; overflow: hidden; min-height: 100vh; padding-top: 50px; transition: width 0.5s ease}
+        .tab_box.active {width: 300px;}
+        .tab_box li {margin-top: 40px;}
+        .tab_box .btn_cls {position: absolute; top: 40px; right: 40px; margin-top: 0;}
+        .tab_box .btn_cls a {padding: 0;}
+        .tab_box .btn_cls i {color: #818181; transition: color 0.3s ease;}
+        .tab_box .btn_cls a:hover {color: #f1f1f1;}
+        .tab_box .btn_cls a:hover i {color: #f1f1f1;}
+        .tab_box a {color: #818181; font-size: 30px; padding: 0 30px;}
+        .tab_box a:hover {color: #f1f1f1;}
+        h1 {font-size: 40px; font-weight: 600;}
+        .txt_box {padding: 20px 40px;}
+        .btn_sideBar {margin-top: 40px;}
+    </style>
+
+</head>
+<body>
+    <div class="wrap">
+        <ul class="tab_box">
+            <li class="btn_cls"><a href="javascript:;"><i class="xi-close"></i></a></li>
+            <li><a href="javascript:;">About</a></li>
+            <li><a href="javascript:;">Services</a></li>
+            <li><a href="javascript:;">Clients</a></li>
+            <li><a href="javascript:;">Contact</a></li>
+        </ul>
+        <div class="txt_box">
+            <h1>collapsed sidebar</h1>
+            <button type="button" class="btn_sideBar">Open Sidebar</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded",function(){
+            let btn_sideBar = document.querySelector(".btn_sideBar");
+            let tab_box = document.querySelector(".tab_box");
+            let btn_cls = document.querySelector(".btn_cls a")
+
+            btn_sideBar.addEventListener("click",function(){
+                tab_box.classList.add("active");
+            });
+
+            btn_cls.addEventListener("click",function(){
+                tab_box.classList.remove("active");
+            });
+
+        });
+    </script>
+</body>
+</html>
