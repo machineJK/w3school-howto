@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        .btn_box {width: 200px;}
+        .btn_box button {width: 100px; color: #fff; background-color: #f4511e;}
+        .btn_box button:hover {background-color: #f44334;}
+        .btn_box button:hover + .link_box {display: block;}
+        .link_box {display: none; background-color: #f1f1f1; box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 20%);}
+        .link_box a {width: 100%; height: 40px; display: flex; align-items: center;}
+        .link_box:hover {display: block;}
+        .link_box a:hover {background-color: #ddd;}
+    </style>
+
+</head>
+<body>
+    <div class="btn_box">
+        <button type="button">Hover Me</button>
+        <ul class="link_box">
+            <li><a href="javascript:;">Link 1</a></li>
+            <li><a href="javascript:;">Link 2</a></li>
+            <li><a href="javascript:;">Link 3</a></li>
+        </ul>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
