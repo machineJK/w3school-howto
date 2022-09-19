@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/jquery-3.6.0.min.js">
+
+    <style>
+        h1 {font-weight: 600; font-size: 30px;}
+        h2 {font-size: 20px;}
+        .tab_box {display: flex; background-color: #333; position: relative;}
+        .tab_box > li > a, .tab_box > li > button {color: #fff; padding: 15px; height: 100%;}
+        .tab_box > li > a:hover, .tab_box > li > button:hover {background-color: red;}
+        .tab_box > li > button {background-color: transparent; border: none;}
+        .tab_box > li > button i {color: #fff; font-size: 12px; margin-left: 3px;}
+        .big_menu {display: none; position: absolute; left: 0; width: 100%;}
+        .big_menu .txt {font-weight: 700; font-size: 40px; padding: 50px 20px; color: #fff; background-color: red;}
+        .dropdown_box:hover .big_menu {display: block;}
+        .dropdown_box:hover > button {background-color: red;}
+        .menu_box {display: flex; background-color: #ccc;}
+        .menu_box ul {width: calc(100% / 3);}
+        .menu_box li {padding: 0 20px; height: 50px;}
+        .menu_box a {width: 100%; height: 100%; justify-content: flex-start; padding: 0 20px;}
+        .menu_box a:hover {background-color: #ddd;}
+        .menu_box .category {font-weight: 600; font-size: 20px; margin-top: 20px;}
+    </style>
+
+</head>
+<body>
+    <ul class="tab_box">
+        <li><a href="javascript:;">Home</a></li>
+        <li><a href="javascript:;">News</a></li>
+        <li class="dropdown_box">
+            <button type="button">Dropdown <i class="xi-caret-down"></i></button>
+            <div class="big_menu">
+                <p class="txt">Mega Menu</p>
+                <div class="menu_box">
+                    <ul>
+                        <li class="category">Category 1</li>
+                        <li><a href="javascript:;">Link 1</a></li>
+                        <li><a href="javascript:;">Link 2</a></li>
+                        <li><a href="javascript:;">Link 3</a></li>
+                    </ul>
+                    <ul>
+                        <li class="category">Category 2</li>
+                        <li><a href="javascript:;">Link 1</a></li>
+                        <li><a href="javascript:;">Link 2</a></li>
+                        <li><a href="javascript:;">Link 3</a></li>
+                    </ul>
+                    <ul>
+                        <li class="category">Category 3</li>
+                        <li><a href="javascript:;">Link 1</a></li>
+                        <li><a href="javascript:;">Link 2</a></li>
+                        <li><a href="javascript:;">Link 3</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+        </li>
+    </ul>
+
+    <h1>Dropdown Menu inside a Navigation Bar</h1>
+    <h2>Hover over the "Dropdown" link to see the dropdown menu.</h2>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+
+    </script>
+</body>
+</html>
